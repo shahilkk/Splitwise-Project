@@ -40,3 +40,4 @@ class Transaction(models.Model):
 
     def __str__(self):
         return f"{self.group.name} - {self.user.first_name} - {self.amount}"
+        
