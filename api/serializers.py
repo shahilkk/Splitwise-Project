@@ -24,7 +24,7 @@ class ExpenseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Expense
-        fields = ['group','name','expense_type','total_amount','participants', 'percentage_shares']
+        fields = ['group','name','expense_type','total_amount','participants', 'percentage_shares','paid_by']
 
     # def validate(self, data):
     #     expense_type = data.get('expense_type')
@@ -60,3 +60,22 @@ class ExpenseSerializer(serializers.ModelSerializer):
 
 
 
+
+
+
+
+
+class PaidSerializer(serializers.ModelSerializer):
+    percentage_shares = serializers.ListField(child=serializers.DecimalField(max_digits=5, decimal_places=2), required=False)
+    # shares = serializers.ListField(child=serializers.DecimalField(max_digits=10, decimal_places=2), required=False)
+
+
+    class Meta:
+        model = Paid
+        fields = ['group','expense','paid_type','total_amount','participants', 'percentage_shares','user']
+
+
+class TransactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Transaction
+        fields = '__all__'

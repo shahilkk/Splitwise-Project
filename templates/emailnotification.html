@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div width="100%" bgcolor="#eeeeee" style="margin:0">
+        <center style="width:100%;background:#eeeeee">
+
+            <div style="max-width:600px;margin:auto">
+
+
+
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                    style="max-width:600px">
+                    <tbody>
+                    </tbody>
+                </table>
+                
+
+
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                    style="max-width:600px">
+
+
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#ffffff">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td
+                                                style="padding:30px;font-family:sans-serif;font-size:15px;line-height:20px;color:#555555">
+
+                                               
+
+                                                <div class="m_724473030518894476desktop-only">
+
+                                                    <table cellspacing="0"
+                                                        style="border-spacing:0;border-collapse:collapse;max-width:560px;width:100%">
+
+                                                        <tbody>
+                                                            <tr style="height:1px">
+
+
+
+                                                                <td style="width:40px"></td>
+
+                                                                <td></td>
+
+                                                                <td></td>
+
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="2" valign="top"
+                                                                    style="padding-bottom:5px;border-bottom:1px solid #ddd;font-weight:bold;font-size:20px;line-height:30px">
+                                                                    Total Amount you Needed to Pay
+                                                                </td>
+                                                                <td valign="top"
+                                                                    style="padding-bottom:5px;border-bottom:1px solid #ddd;font-size:20px;text-align:right;color:#ff5216;line-height:30px">
+                                                                    <div
+                                                                        style="color:#ff5216;font-size:20px;text-align:right">
+                                                                        <span style="font-size:16px">
+                                                                            you owe
+                                                                        </span>
+                                                                        <strong>{{total_amount_to_pay_Borrowered}}</strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" valign="top"
+                                                                    style="padding-bottom:5px;border-bottom:1px solid #ddd;font-weight:bold;font-size:20px;line-height:30px">
+                                                                    Total Amount you will Get
+                                                                </td>
+                                                                <td valign="top"
+                                                                    style="padding-bottom:5px;border-bottom:1px solid #ddd;font-size:20px;text-align:right;color:#ff5216;line-height:30px">
+                                                                    <div
+                                                                        style="color:#3ba889;font-size:20px;text-align:right">
+                                                                        <span style="font-size:16px">
+                                                                            they owe
+                                                                        </span>
+                                                                        <strong>{{total_amount_to_get_Lended}}</strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                            {% for Single_value in Borrower %}
+                                                            <!-- {{ Single_value }} -->
+                                                            <tr>
+                                                                <td style="padding-top:10px;width:40px;line-height:30px"
+                                                                    valign="top">
+                                                                </td>
+                                                                <td style="padding-top:10px;line-height:30px;font-size:16px"
+                                                                    valign="top">
+                                                                    <a style="color:inherit;text-decoration:none"
+                                                                        >{{ Single_value.Borrower_Name }}</a>
+                                                                </td>
+                                                                <td style="padding-top:14px;line-height:20px"
+                                                                    valign="top">
+                                                                    <div
+                                                                        
+                                                                        style="color:#3ba889;font-size:16px;text-align:right">
+                                                                        <span style="font-size:14px">
+                                                                            owes you
+                                                                        </span>
+                                                                        <strong>{{ Single_value.Amount }}</strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                            
+                                                            {% for Single_value in Lender %}
+                                                            <tr>
+                                                                <td style="padding-top:10px;width:40px;line-height:30px"
+                                                                valign="top">
+                                                                </td>
+                                                                <td style="padding-top:10px;line-height:30px;font-size:16px"
+                                                                    valign="top">
+                                                                    <span>{{ Single_value.Lender_Name }}</span>
+                                                                </td>
+                                                                <td style="padding-top:14px;line-height:20px"
+                                                                    valign="top">
+                                                                    <div
+                                                                    style="color:#ff5216;font-size:16px;text-align:right">
+                                                                    <span style="font-size:14px">
+                                                                        you owe
+                                                                    </span>
+                                                                        <strong>{{ Single_value.Amount }}</strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                            {% endfor %}
+
+
+
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+
+
+
+                                                    <br>
+
+                                                    <br>
+
+
+
+
+
+                                                </div>
+
+
+
+
+
+
+                                                <br>
+
+                                                <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+
+
+
+
+
+            </div>
+        </center>
+
+      
+    </div>
+</body>
+
+</html>
