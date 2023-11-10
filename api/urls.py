@@ -15,8 +15,8 @@ from . import views
 
 # Define your custom path for simplifying expenses
 custom_urlpatterns = [
-    # path('Group/<int:pk>/simplify_expenses/', views.SimplifyViewSet.as_view({'post': 'simplify_expenses'}), name='group-simplify-expenses')
-    # path('month-wise/', views.Month_wise, name='month_wise'),
+
+    path("schedule", views.schedule_task, name="schedule")
 ]
 
 # Use DefaultRouter to handle the standard routes

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'djoser',
     'web',
     'rest_framework',
+    "django_celery_results",
+    "django_celery_beat",
 ]
 
 MIDDLEWARE = [
@@ -157,24 +159,22 @@ STATIC_ROOT = BASE_DIR / "assets"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# EMAIL_BACKEND = config('EMAIL_BACKEND')
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_PORT = config('EMAIL_PORT')
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = True
-
-
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp-relay.sendinblue.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'development.asdk22@gmail.com'
-# EMAIL_HOST_PASSWORD = '4tNXkYFZ386hfmVy'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587  # or 465 if using SSL
-EMAIL_USE_TLS = True  # or EMAIL_USE_SSL = True for SSL
+EMAIL_PORT = 587  
+EMAIL_USE_TLS = True  
 EMAIL_HOST_USER = 'shahilkhan.7139@gmail.com'
 EMAIL_HOST_PASSWORD = 'nchslzwvdajasipf'
+
+
+# CELERY SETTINGS
+CELERY_BROKER_URL='redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT=['application/json']
+CELERY_RESULT_SERIALIZER='json'
+CELERY_TASK_SERIALIZER='json'
+CELERY_TIMEZONE='Asia/Kolkata'
+CELERY_RESULT_BACKEND ='django-db'
+
+# CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseSchedulers'
+CELERY_RESULT_EXTENDED = True
