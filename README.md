@@ -16,3 +16,5 @@ Email: your.email@example.com
 
 
 python manage.py runserver 8000
+
+For celery run the code in celery_start.sh file
